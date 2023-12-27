@@ -87,6 +87,7 @@ public class Inventory : MonoBehaviour
         {
             // 슬롯이 선택되지 않은 경우, 선택한 슬롯으로 설정
             selectedSlot = clickedSlot;
+            Debug.Log("click slot");
         }
         else
         {
@@ -110,7 +111,7 @@ public class Inventory : MonoBehaviour
         else
         {
             // 현재 슬롯이 비어 있으면
-            clickedSlot.ClearSlot();
+            selectedSlot = null;
         }
 
         // 선택한 슬롯에 아이템 추가

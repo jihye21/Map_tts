@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35221967, g: 0.7238675, b: 0.95840895, a: 1}
+  m_IndirectSpecularColor: {r: 0.35233432, g: 0.7238941, b: 0.958455, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -801,7 +801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acd837d1076fbbe4a88778a02bb16e94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000000006055832
+      value: -2.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: acd837d1076fbbe4a88778a02bb16e94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1848,7 +1848,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 53787236}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2081,7 +2081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -458
+      value: -589.7
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2193,7 +2193,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 254353853}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -3948,7 +3948,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 475787126}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -4523,7 +4523,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 618933960}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -4918,7 +4918,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 805006752}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -5043,7 +5043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -458
+      value: -589.7
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5154,7 +5154,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 810583583}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -7361,15 +7361,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1130987853970160517, guid: 2f4adfd348b15bf4a8c3ed737fde7872, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 1.37
       objectReference: {fileID: 0}
     - target: {fileID: 1130987853970160517, guid: 2f4adfd348b15bf4a8c3ed737fde7872, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.14
       objectReference: {fileID: 0}
     - target: {fileID: 1130987853970160517, guid: 2f4adfd348b15bf4a8c3ed737fde7872, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1130987853970160517, guid: 2f4adfd348b15bf4a8c3ed737fde7872, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7611,7 +7611,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 534983935}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -7705,7 +7705,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1268173579}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -7830,7 +7830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -458
+      value: -589.7
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7941,7 +7941,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1270461165}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -8233,7 +8233,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 144507019}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -8526,7 +8526,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1338187565}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -10033,7 +10033,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1526337333}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -10571,7 +10571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -456.3
+      value: -588
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10683,7 +10683,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1573282120}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -10910,7 +10910,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1287154709}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -11228,7 +11228,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1289913084}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -11520,7 +11520,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1723210331}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -11902,7 +11902,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 394801324}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -12043,7 +12043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -458
+      value: -589.7
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12155,7 +12155,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1771184739}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -12382,7 +12382,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1524411158}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -12839,7 +12839,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1889950825}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -13183,7 +13183,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1881761487}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -13821,7 +13821,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1015976892}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -14020,7 +14020,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1925149623}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -14145,7 +14145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -458
+      value: -589.7
       objectReference: {fileID: 0}
     - target: {fileID: 6933031727595871200, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14159,7 +14159,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 582755623301899483, guid: 780995eda4e7a3d49ab093921496056b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -14256,7 +14257,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 2040786892}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -14618,7 +14619,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 2131717765}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -14843,7 +14844,7 @@ MonoBehaviour:
         m_MethodName: OnSlotClick
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 1187465529}
           m_ObjectArgumentAssemblyTypeName: Slot, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -14860,15 +14861,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4004548320167385553, guid: d91263546677614428f09628b5f06fb8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 261.47
+      value: 261.67
       objectReference: {fileID: 0}
     - target: {fileID: 4004548320167385553, guid: d91263546677614428f09628b5f06fb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.76
+      value: 15.75
       objectReference: {fileID: 0}
     - target: {fileID: 4004548320167385553, guid: d91263546677614428f09628b5f06fb8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 165.7
+      value: 143.49
       objectReference: {fileID: 0}
     - target: {fileID: 4004548320167385553, guid: d91263546677614428f09628b5f06fb8, type: 3}
       propertyPath: m_LocalRotation.w

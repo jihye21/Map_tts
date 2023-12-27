@@ -35,6 +35,12 @@ public class Slot : MonoBehaviour
         itemCount = _count;
         itemImage.sprite = item.itemImage;
 
+
+        if (itemImage != null && item != null && item.itemImage != null)
+        {
+            itemImage.sprite = item.itemImage;
+        }
+
         if (item.itemType != Item.ItemType.Equipment)
         {
             go_CountImage.SetActive(true);
