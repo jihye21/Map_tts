@@ -58,21 +58,4 @@ public class QuickSlotController : MonoBehaviour
         // 선택된 슬롯으로 이미지 이동
         go_SelectedImage.transform.position = quickSlots[selectedSlot].transform.position;
     }
-
-    /*private void Execute()
-    {
-        if (quickSlots[selectedSlot].item != null)
-        {
-            if (quickSlots[selectedSlot].item.itemType == Item.ItemType.Equipment)
-                StartCoroutine(theWeaponManager.ChangeWeaponCoroutine(quickSlots[selectedSlot].item.weaponType, quickSlots[selectedSlot].item.itemName));
-            else if (quickSlots[selectedSlot].item.itemType == Item.ItemType.Used)
-                StartCoroutine(theWeaponManager.ChangeWeaponCoroutine("HAND", "맨손"));
-            else
-                StartCoroutine(theWeaponManager.ChangeWeaponCoroutine("HAND", "맨손"));
-        }
-        else
-        {
-            StartCoroutine(theWeaponManager.ChangeWeaponCoroutine("HAND", "맨손"));
-        }
-    }*/
 }
