@@ -106,6 +106,7 @@ public class TigerCtrl : MonoBehaviour
             if (currentState == State.SLEEP)
             {
                 anim.SetBool("IsSleep", true);
+                anim.SetBool("IsWalk", false); // IsWalk 비활성화
                 agent.enabled = false;
 
                 //플레이어가 빠른 속도로 chaseRange에 들어왔을 때
@@ -144,7 +145,7 @@ public class TigerCtrl : MonoBehaviour
                 }
                 return;
             }
-
+            /*
             if (currentState == State.IDLE)
             {
                 idleTimer += Time.deltaTime;
@@ -157,6 +158,7 @@ public class TigerCtrl : MonoBehaviour
                     idleTimer = 0f; // 타이머 초기화
                 }
             }
+            */
         }
         else
         {
