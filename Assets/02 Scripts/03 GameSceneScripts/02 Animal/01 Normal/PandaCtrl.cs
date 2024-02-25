@@ -20,10 +20,9 @@ public class PandaCtrl : MonoBehaviour
     
     private float originalSpeed; //현 속도
     private State currentState; //현상태
-    private float idleTimer = 0f; // IDLE 상태 타이머
 
-    private Animator animator; // 애니메이터 컴포넌트
-    private Animator anim; //22
+    private Animator anim; //애니메이터 컴포넌트
+
     private float commRange = 7.0f; //교감 범위
     private float watchRange = 10.0f; //시야 범위
 
@@ -40,24 +39,11 @@ public class PandaCtrl : MonoBehaviour
         WALK,
         SLEEP,
         DIE,
-        RUN
-
-
+        RUN,
+        GUARD
     }
     #endregion
-    void AlignObjectToGround()
-    {
-        RaycastHit hit;
-        // 오브젝트 아래로 레이캐스트를 발사
-        if (Physics.Raycast(transform.position, -Vector3.up, out hit, raycastLength, groundLayer))
-        {
-            Vector3 targetPosition = hit.point; // 땅과 충돌한 지점
-            transform.position = targetPosition;
-
-            Quaternion targetRotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
-            transform.rotation = targetRotation;
-        }
-    }
+    
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -67,158 +53,94 @@ public class PandaCtrl : MonoBehaviour
         playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
 
-        animator = GetComponent<Animator>(); // 애니메이터 컴포넌트 가져오기
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-
-
+        
         originalSpeed = agent.speed;
         currentState = State.WALK;
 
     }
-  
+
 
     void Update()
     {
-        AlignObjectToGround();
+        SetRandomDestination();
         currTime += Time.deltaTime;
 
-        if (currentState == State.DIE || agent == null || !agent.isOnNavMesh) return;
+        float distanceToPlayer = Vector3.Distance(playerTransform.position, transform.position);
 
-        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
-
-        if (currentState == State.WALK)
+        // 낮 시간
+        if ((currTime % 100) >= 70)
         {
-            originalSpeed = 3;
-            animator.SetBool("IsWalk", true);
-            anim.SetBool("IsGuard", false);
-            anim.SetBool("IsWalk", false);
-            anim.SetBool("IsInteraction", false);
-            anim.SetBool("IsRun", false);
-            anim.SetBool("IsSleep", false);
-            anim.SetBool("IsEat", false);
-            idleTimer += Time.deltaTime;
-            agent.enabled = true;
-            SetRandomDestination();
+            // SLEEP 상태
+            currentState = State.SLEEP;
 
-            if (idleTimer >= 10.0f && currTime > 70.0f)
-            {
-                Debug.Log("sleep time");
-                currentState = State.SLEEP;
-                agent.enabled = false;
-                currPosition = transform.position;
-                animator.SetBool("IsSleep", true); // SLEEP 상태일 때 IsSleep 애니메이션 활성화
-                animator.SetBool("IsWalk", false);
-                anim.SetBool("IsGuard", false);
-                anim.SetBool("IsEat", false);
-                anim.SetBool("IsInteraction", false);
-                anim.SetBool("IsRun", false);
-                Debug.Log("IsSleep");
-
-                if ((currTime % 100) < 70)//낮에 일어나기
-                {
-                    idleTimer = 0f; // 타이머 초기화
-                    Debug.Log("wake up");
-                    agent.enabled = true;
-                }
-            }
-            else
-            {
-                originalSpeed = 3;
-                animator.SetBool("IsWalk", true);
-                anim.SetBool("IsGuard", false);
-                anim.SetBool("IsWalk", false);
-                anim.SetBool("IsInteraction", false);
-                anim.SetBool("IsRun", false);
-                anim.SetBool("IsSleep", false);
-                anim.SetBool("IsEat", false);
-                idleTimer += Time.deltaTime;
-                agent.enabled = true;
-                SetRandomDestination();
-                
-            }
-
+            anim.SetBool("IsSleep", true);
+            anim.SetBool("IsWalk", false); // IsWalk 비활성화
+            agent.enabled = false;
         }
-
-        if (distanceToPlayer <= watchRange)
-        {
-            if (PlayerCtrl.moveSpeed < 2.0f)
-            {
-                transform.LookAt(playerTransform.position);
-
-                anim.SetBool("IsGuard", true);
-                anim.SetBool("IsWalk", false);
-                anim.SetBool("IsInteraction", false);
-                anim.SetBool("IsRun", false);
-                anim.SetBool("IsSleep", false);
-                anim.SetBool("IsEat", false);
-
-                if (anim.GetBool("IsGuard"))
-                {
-                    // 현재 위치를 저장하고 해당 위치로 고정
-                    currPosition = transform.position;
-
-
-                    if (distanceToPlayer <= commRange)
-                    {
-                        currentState = State.COMM;
-                        anim.SetBool("IsInteraction", true);
-                        anim.SetBool("IsWalk", false);
-                        anim.SetBool("IsGuard", false);
-                        anim.SetBool("IsRun", false);
-                        anim.SetBool("IsEat", false);
-                        anim.SetBool("IsSleep", false);
-
-                    }
-                    else
-                    {
-                        anim.SetBool("IsInteraction", false);
-                        anim.SetBool("IsGuard", true);
-                    }
-                }
-
-            }
-            
-            else
-            {
-                anim.SetBool("IsGuard", false);
-                anim.SetBool("IsInteraction", false);
-                anim.SetBool("IsWalk", true);
-                anim.SetBool("IsRun", false);
-                anim.SetBool("IsEat", false);
-                anim.SetBool("IsSleep", false);
-            }
-            
-
-            if (PlayerCtrl.moveSpeed > 2.0f)
-            {
-                Debug.Log("a");
-                currentState = State.RUN;
-                distanceToPlayer += 10.0f;
-
-                anim.SetBool("IsRun", true);
-                anim.SetBool("IsWalk", false);
-                anim.SetBool("IsInteraction", false);
-                anim.SetBool("IsGuard", false);
-                anim.SetBool("IsEat", false);
-                anim.SetBool("IsSleep", false);
-
-                if (currentState == State.RUN)
-                {
-                    originalSpeed = 6;
-                    SetRandomDestination();
-                }
-            }
-
-
-
-
-        }
-
-
-        if (distanceToPlayer > watchRange)
+        else if (distanceToPlayer > watchRange)
         {
             currentState = State.WALK;
+            agent.enabled =true;
+        
+            anim.SetBool("IsWalk", true);
+            anim.SetBool("IsInteraction", false);
+            anim.SetBool("IsGuard", false);
+            anim.SetBool("IsRun", false);
+            anim.SetBool("IsEat", false);
+            anim.SetBool("IsSleep", false);
+        }
+        else if (distanceToPlayer <= watchRange && PlayerCtrl.moveSpeed < 2.0f)
+        {
+            // 현재 위치를 저장하고 해당 위치로 고정
+            currPosition = transform.position;
+            //플레이어 바라보기
+            transform.LookAt(playerTransform.position);
+
+            currentState = State.GUARD;
+            anim.SetBool("IsGuard", true);
+
+            if (distanceToPlayer <= commRange)
+            {
+                currentState = State.COMM;
+                anim.SetBool("IsInteraction", true);
+                anim.SetBool("IsWalk", false);
+                anim.SetBool("IsGuard", false);
+                anim.SetBool("IsRun", false);
+                anim.SetBool("IsEat", false);
+                anim.SetBool("IsSleep", false);
+
+            }
+            else
+            {
+                anim.SetBool("IsInteraction", false);
+                anim.SetBool("IsGuard", true);
+            }
+        }
+        else if (PlayerCtrl.moveSpeed > 2.0f)
+        {
+            currentState = State.RUN;
+            distanceToPlayer += 10.0f;
+
+            anim.SetBool("IsRun", true);
+            anim.SetBool("IsWalk", false);
+            anim.SetBool("IsInteraction", false);
+            anim.SetBool("IsGuard", false);
+            anim.SetBool("IsEat", false);
+            anim.SetBool("IsSleep", false);
+
+            if (currentState == State.RUN)
+            {
+                originalSpeed = 6;
+                SetRandomDestination();
+            }
+        }
+        else 
+        {
+            currentState = State.WALK;
+            agent.enabled = true;
+
             anim.SetBool("IsWalk", true);
             anim.SetBool("IsInteraction", false);
             anim.SetBool("IsGuard", false);
@@ -228,21 +150,11 @@ public class PandaCtrl : MonoBehaviour
         }
 
 
-        
     }
-
-    
-    void SetRandomDestination()
+        void SetRandomDestination()
     {
         float distanceToDestination = Vector3.Distance(transform.position, agent.destination);
-        /*
-        Vector3 randomDirection = Random.insideUnitSphere * roamingRange;
-        randomDirection += transform.position;
-        NavMeshHit hit;
-        NavMesh.SamplePosition(randomDirection, out hit, roamingRange, 1);
-        agent.SetDestination(hit.position);
-        */
-
+        
         if (distanceToDestination < 2.0f) // 임계값은 상황에 맞게 조정
         {
             Vector3 randomDirection = Random.insideUnitSphere * roamingRange;
@@ -268,7 +180,7 @@ public class PandaCtrl : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("BULLET"))
         {
-            Debug.Log("멸종위기종 때리면 감옥가요");
+            Debug.Log("타격");
         }
 
         if (collision.gameObject.CompareTag("Player"))
@@ -283,7 +195,7 @@ public class PandaCtrl : MonoBehaviour
         if (health <= 0)
         {
             currentState = State.DIE;
-            animator.SetBool("IsDie", true);
+            anim.SetBool("IsDie", true);
             //게임오버
         }
 
